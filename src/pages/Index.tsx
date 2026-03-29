@@ -148,6 +148,7 @@ const Index = () => (
 
     <Footer />
   </div>
+  </PageTransition>
 );
 
 export default Index;
