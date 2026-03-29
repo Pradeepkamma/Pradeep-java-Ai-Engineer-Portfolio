@@ -23,6 +23,7 @@ const coreSkills = [
 ];
 
 const Index = () => (
+  <PageTransition>
   <div className="min-h-screen">
     <Navbar />
 
