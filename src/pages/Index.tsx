@@ -13,7 +13,7 @@ const fadeUp = (delay: number) => ({
 
 const coreSkills = [
   "Java Full Stack",
-  "Python",
+  "Python (Basics)",
   "FastAPI",
   "ComfyUI",
   "LoRA Training",
