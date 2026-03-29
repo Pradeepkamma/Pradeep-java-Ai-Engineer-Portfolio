@@ -4,6 +4,7 @@ import profileImg from "@/assets/profile.jpg";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProjectCard from "@/components/ProjectCard";
+import PageTransition from "@/components/PageTransition";
 
 const fadeUp = (delay: number) => ({
   initial: { opacity: 0, y: 20 },
