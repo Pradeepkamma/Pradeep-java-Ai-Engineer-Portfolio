@@ -9,6 +9,7 @@ import Skills from "./pages/Skills";
 import Projects from "./pages/Projects";
 import ProjectTulipa from "./pages/ProjectTulipa";
 import ProjectCTScan from "./pages/ProjectCTScan";
+import ProjectTesla from "./pages/ProjectTesla";
 import Certifications from "./pages/Certifications";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
