@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import SkillCard from "@/components/SkillCard";
 
 const skillCategories = [
-  { title: "Programming Languages", skills: ["Python", "Java", "OOPs", "JDBC", "Hibernate"] },
+  { title: "Programming Languages", skills: ["Python (Basics)", "Java", "OOPs", "JDBC", "Hibernate"] },
   { title: "Front-End Technologies", skills: ["HTML", "CSS", "JavaScript (Basics)"] },
   { title: "Database", skills: ["MySQL", "DBMS"] },
   { title: "Frameworks", skills: ["Spring Boot (Basics)", "FastAPI"] },

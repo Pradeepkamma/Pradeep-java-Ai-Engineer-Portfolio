@@ -9,6 +9,7 @@ import Skills from "./pages/Skills";
 import Projects from "./pages/Projects";
 import ProjectTulipa from "./pages/ProjectTulipa";
 import ProjectCTScan from "./pages/ProjectCTScan";
+import ProjectTesla from "./pages/ProjectTesla";
 import Certifications from "./pages/Certifications";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/tulipa" element={<ProjectTulipa />} />
           <Route path="/projects/ctscan" element={<ProjectCTScan />} />
+          <Route path="/projects/tesla" element={<ProjectTesla />} />
           <Route path="/certifications" element={<Certifications />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
