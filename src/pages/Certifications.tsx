@@ -9,9 +9,10 @@ const Certifications = () => (
       <Navbar />
       <section className="bg-background pt-28 pb-20 min-h-screen">
         <div className="container mx-auto px-4">
-          <h1 className="font-heading text-3xl md:text-4xl text-foreground text-center mb-12">
+          <h1 className="font-heading text-3xl md:text-4xl text-foreground text-center mb-3">
             Certifications
           </h1>
+          <div className="w-16 h-0.5 bg-gold mx-auto mb-12" />
           <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             <CertCard
               title="Java Full Stack Development"

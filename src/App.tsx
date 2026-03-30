@@ -11,6 +11,7 @@ import Projects from "./pages/Projects";
 import ProjectTulipa from "./pages/ProjectTulipa";
 import ProjectCTScan from "./pages/ProjectCTScan";
 import ProjectTesla from "./pages/ProjectTesla";
+import ProjectPortfolio from "./pages/ProjectPortfolio";
 import Certifications from "./pages/Certifications";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -29,6 +30,7 @@ const AnimatedRoutes = () => {
         <Route path="/projects/tulipa" element={<ProjectTulipa />} />
         <Route path="/projects/ctscan" element={<ProjectCTScan />} />
         <Route path="/projects/tesla" element={<ProjectTesla />} />
+        <Route path="/projects/portfolio" element={<ProjectPortfolio />} />
         <Route path="/certifications" element={<Certifications />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
