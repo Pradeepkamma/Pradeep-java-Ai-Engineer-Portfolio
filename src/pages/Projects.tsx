@@ -9,27 +9,36 @@ const Projects = () => (
       <Navbar />
       <section className="bg-off-white pt-28 pb-20 min-h-screen">
         <div className="container mx-auto px-4">
-          <h1 className="font-heading text-3xl md:text-4xl text-foreground text-center mb-12">
+          <h1 className="font-heading text-3xl md:text-4xl text-foreground text-center mb-4">
             Projects
           </h1>
+          <p className="text-gray-text text-center mb-12 max-w-xl mx-auto">
+            Real-world projects I've designed and built end-to-end — from AI systems to full-stack applications.
+          </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <ProjectCard
               title="AI Product Rendering — TULIPA Noir Blossom"
-              description="Built an AI-powered luxury product rendering pipeline for an Indian perfume brand using custom-trained Flux LoRA model and ComfyUI workflows."
+              description="Built an AI-powered luxury product rendering pipeline using custom-trained Flux LoRA model and ComfyUI workflows. Generated campaign-level product images."
               tags={["ComfyUI", "Flux LoRA", "JarvisLabs", "Generative AI"]}
               link="/projects/tulipa"
             />
             <ProjectCard
               title="CT Image Segmentation — Pneumonia Detection"
-              description="Deep learning segmentation model to classify CT lung images as pneumonia or normal, achieving 95% accuracy for early medical diagnosis."
+              description="Developed a deep learning segmentation model achieving 95% accuracy for classifying CT lung images as pneumonia or normal for early medical diagnosis."
               tags={["Deep Learning", "Python", "Medical AI"]}
               link="/projects/ctscan"
             />
             <ProjectCard
               title="Tesla Stock Price Prediction"
-              description="Machine learning model using LSTM neural networks to predict Tesla stock prices from historical market data with time-series analysis."
+              description="Built an LSTM neural network model for time-series stock price forecasting using historical Tesla market data with technical indicators."
               tags={["Machine Learning", "Python", "LSTM", "Data Science"]}
               link="/projects/tesla"
+            />
+            <ProjectCard
+              title="Portfolio Website"
+              description="Designed and developed this portfolio from scratch using React, TypeScript, Tailwind CSS, and Framer Motion with smooth page transitions."
+              tags={["React", "TypeScript", "Tailwind CSS", "Framer Motion"]}
+              link="/projects/portfolio"
             />
           </div>
         </div>

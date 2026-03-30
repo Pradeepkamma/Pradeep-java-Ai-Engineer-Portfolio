@@ -11,18 +11,18 @@ const highlights = [
   },
   {
     icon: "💻",
-    title: "Core Expertise",
-    text: "Java Full Stack Development with hands-on experience in OOPs, JDBC, Hibernate, Spring Boot, HTML, CSS, JavaScript, and MySQL.",
+    title: "What I Do",
+    text: "I build robust Java backends, craft clean frontends, and develop AI-powered systems — from LoRA model training to full-stack web apps.",
   },
   {
     icon: "🤖",
     title: "Currently Learning",
-    text: "Generative AI & LLM Engineering — working with Flux LoRA, ComfyUI, RAG systems, and FastAPI for AI services.",
+    text: "Generative AI & LLM Engineering — working with Flux LoRA, ComfyUI, RAG systems, and FastAPI for production-grade AI services.",
   },
   {
-    icon: "⚡",
-    title: "Work Philosophy",
-    text: "Quick learner who adapts fast. I don't just follow tutorials — I build real things and understand why they work.",
+    icon: "🎯",
+    title: "What I Want",
+    text: "Looking for opportunities where I can contribute to real engineering problems, grow with a strong team, and keep building impactful products.",
   },
 ];
 
@@ -41,9 +41,10 @@ const About = () => (
       <Navbar />
       <section className="pt-28 pb-20 bg-background">
         <div className="container mx-auto px-4">
-          <h1 className="font-heading text-3xl md:text-4xl text-foreground mb-12 text-center">
+          <h1 className="font-heading text-3xl md:text-4xl text-foreground mb-4 text-center">
             About Me
           </h1>
+          <div className="w-16 h-0.5 bg-gold mx-auto mb-12" />
 
           <div className="grid md:grid-cols-2 gap-16 max-w-5xl mx-auto">
             <div>
@@ -53,15 +54,18 @@ const About = () => (
               <p className="text-gray-text leading-relaxed mb-4">
                 My journey started with core Java and web technologies, and over time I've expanded into Machine Learning and now Generative AI. I'm currently part of an AI Cohort focused on Generative AI & LLM Engineering, where I'm working with tools like ComfyUI, Flux, LoRA Training, RAG systems, and FastAPI.
               </p>
-              <p className="text-gray-text leading-relaxed mb-8">
-                I believe in learning by doing. Every project I take on pushes me to understand technology deeper and apply it to real-world problems. I'm actively looking for opportunities where I can contribute, grow, and keep building.
+              <p className="text-gray-text leading-relaxed mb-4">
+                I believe in learning by doing. Every project I take on pushes me to understand technology deeper and apply it to real-world problems.
+              </p>
+              <p className="text-foreground font-medium mb-8">
+                Currently looking for opportunities where I can contribute, grow, and keep building.
               </p>
 
               <div className="grid grid-cols-2 gap-4">
                 {infoGrid.map((item) => (
-                  <div key={item.label}>
+                  <div key={item.label} className="p-3 rounded-lg bg-off-white">
                     <p className="text-xs text-gold uppercase tracking-wider font-semibold mb-1">{item.label}</p>
-                    <p className={`text-sm ${item.isGreen ? "text-green-600" : "text-foreground"}`}>
+                    <p className={`text-sm font-medium ${item.isGreen ? "text-green-600" : "text-foreground"}`}>
                       {item.value}
                     </p>
                   </div>
@@ -71,19 +75,22 @@ const About = () => (
 
             <div>
               <div className="flex justify-center mb-8">
-                <img
-                  src={profileImg}
-                  alt="K. Pradeep"
-                  className="w-44 h-44 rounded-full object-cover border-4 border-gold/40"
-                  loading="lazy"
-                  width={176}
-                  height={176}
-                />
+                <div className="relative">
+                  <img
+                    src={profileImg}
+                    alt="K. Pradeep"
+                    className="w-48 h-48 rounded-full object-cover border-4 border-gold/30 shadow-xl"
+                    loading="lazy"
+                    width={192}
+                    height={192}
+                  />
+                  <div className="absolute -inset-2 rounded-full border-2 border-gold/15 animate-pulse" />
+                </div>
               </div>
 
               <div className="space-y-4">
                 {highlights.map((h) => (
-                  <div key={h.title} className="border-l-2 border-gold pl-4">
+                  <div key={h.title} className="border-l-2 border-gold pl-4 hover:border-l-[3px] transition-all">
                     <h3 className="font-heading text-foreground text-base mb-1">
                       {h.icon} {h.title}
                     </h3>

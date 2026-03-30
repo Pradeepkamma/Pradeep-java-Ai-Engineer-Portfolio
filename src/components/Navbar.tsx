@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -16,7 +16,7 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-navy border-b border-gold/20">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-navy/95 backdrop-blur-md border-b border-gold/20">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
         <Link to="/" className="font-heading text-xl text-gold">
           K. Pradeep
@@ -28,14 +28,25 @@ const Navbar = () => {
             <li key={l.path}>
               <Link
                 to={l.path}
-                className={`text-sm tracking-wide transition-colors hover:text-gold ${
-                  location.pathname === l.path ? "text-gold" : "text-white"
+                className={`nav-link text-sm tracking-wide transition-colors hover:text-gold pb-1 ${
+                  location.pathname === l.path ? "text-gold active" : "text-white/80"
                 }`}
               >
                 {l.label}
               </Link>
             </li>
           ))}
+          <li>
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-4 py-2 bg-gold text-navy rounded-lg text-xs font-semibold hover:opacity-90 transition"
+            >
+              <Download size={14} />
+              Resume
+            </a>
+          </li>
         </ul>
 
         {/* Mobile toggle */}
@@ -57,12 +68,21 @@ const Navbar = () => {
               to={l.path}
               onClick={() => setOpen(false)}
               className={`block py-3 text-sm transition-colors hover:text-gold ${
-                location.pathname === l.path ? "text-gold" : "text-white"
+                location.pathname === l.path ? "text-gold" : "text-white/80"
               }`}
             >
               {l.label}
             </Link>
           ))}
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 mt-2 px-4 py-2 bg-gold text-navy rounded-lg text-xs font-semibold"
+          >
+            <Download size={14} />
+            Download Resume
+          </a>
         </div>
       )}
     </nav>
