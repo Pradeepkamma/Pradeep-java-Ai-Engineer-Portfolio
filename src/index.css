@@ -4,31 +4,31 @@
 
 @layer base {
   :root {
-    --background: 40 33% 96%;
+    --background: 36 27% 96%;
     --foreground: 216 56% 15%;
     --card: 0 0% 100%;
     --card-foreground: 216 56% 15%;
     --popover: 0 0% 100%;
     --popover-foreground: 216 56% 15%;
     --primary: 216 56% 15%;
-    --primary-foreground: 40 33% 96%;
-    --secondary: 40 33% 96%;
+    --primary-foreground: 36 27% 96%;
+    --secondary: 36 27% 96%;
     --secondary-foreground: 216 56% 15%;
     --muted: 220 14% 96%;
     --muted-foreground: 220 9% 46%;
-    --accent: 37 40% 60%;
+    --accent: 37 38% 60%;
     --accent-foreground: 216 56% 15%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 37 40% 60%;
+    --ring: 37 38% 60%;
     --radius: 0.5rem;
 
-    /* Custom tokens */
-    --navy: 216 56% 15%;
-    --gold: 37 40% 60%;
-    --off-white: 40 33% 96%;
+    /* Custom tokens — exact hex #0f1f3d, #c8a96e, #f8f6f2 */
+    --navy: 218 61% 15%;
+    --gold: 37 46% 61%;
+    --off-white: 36 33% 96%;
     --gray-text: 220 9% 46%;
   }
 }
@@ -43,4 +43,17 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
   }
+}
+
+/* Navbar hover underline animation */
+.nav-link {
+  @apply relative;
+}
+.nav-link::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-full h-0.5 bg-gold scale-x-0 origin-right transition-transform duration-300;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  @apply scale-x-100 origin-left;
 }
