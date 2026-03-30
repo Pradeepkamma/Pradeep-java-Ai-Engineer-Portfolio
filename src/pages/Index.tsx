@@ -89,16 +89,14 @@ const Index = () => (
             {...fadeUp(0.4)}
             className="hidden md:block relative"
           >
-            <div className="absolute -inset-4 rounded-2xl bg-gradient-to-br from-gold/20 to-gold/5 blur-sm" />
-            <div className="relative">
+            <div className="relative p-1 rounded-2xl bg-gradient-to-br from-gold/40 via-gold/20 to-gold/5">
               <img
                 src={profileImg}
                 alt="K. Pradeep"
-                className="w-72 h-80 object-cover rounded-2xl relative z-10 shadow-2xl shadow-gold/10"
+                className="w-72 h-80 object-cover rounded-2xl shadow-2xl"
                 width={288}
                 height={320}
               />
-              <div className="absolute -bottom-3 -right-3 w-72 h-80 border-2 border-gold/30 rounded-2xl z-0" />
             </div>
           </motion.div>
         </div>
