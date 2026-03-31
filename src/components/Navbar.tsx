@@ -15,6 +15,11 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
 
+  const isActive = (path: string) => {
+    if (path === "/") return location.pathname === "/";
+    return location.pathname.startsWith(path);
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-navy/95 backdrop-blur-md border-b border-gold/20">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
@@ -29,7 +34,7 @@ const Navbar = () => {
               <Link
                 to={l.path}
                 className={`nav-link text-sm tracking-wide transition-colors hover:text-gold pb-1 ${
-                  location.pathname === l.path ? "text-gold active" : "text-white/80"
+                  isActive(l.path) ? "text-gold active" : "text-white/80"
                 }`}
               >
                 {l.label}
@@ -52,7 +57,7 @@ const Navbar = () => {
         {/* Mobile toggle */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-white"
+          className="md:hidden text-white p-2"
           aria-label="Toggle menu"
         >
           {open ? <X size={24} /> : <Menu size={24} />}
@@ -61,14 +66,14 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-navy border-t border-gold/20 px-4 pb-4">
+        <div className="md:hidden bg-navy border-t border-gold/20 px-4 pb-4 animate-fade-in">
           {navLinks.map((l) => (
             <Link
               key={l.path}
               to={l.path}
               onClick={() => setOpen(false)}
               className={`block py-3 text-sm transition-colors hover:text-gold ${
-                location.pathname === l.path ? "text-gold" : "text-white/80"
+                isActive(l.path) ? "text-gold" : "text-white/80"
               }`}
             >
               {l.label}
@@ -78,7 +83,7 @@ const Navbar = () => {
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 mt-2 px-4 py-2 bg-gold text-navy rounded-lg text-xs font-semibold"
+            className="inline-flex items-center gap-1.5 mt-2 px-4 py-2.5 bg-gold text-navy rounded-lg text-sm font-semibold"
           >
             <Download size={14} />
             Download Resume

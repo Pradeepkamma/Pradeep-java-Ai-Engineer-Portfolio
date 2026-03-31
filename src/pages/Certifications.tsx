@@ -2,9 +2,14 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 import CertCard from "@/components/CertCard";
+import SEOHead from "@/components/SEOHead";
 
 const Certifications = () => (
   <PageTransition>
+    <SEOHead
+      title="Certifications — K. Pradeep"
+      description="Professional certifications of K. Pradeep in Java Full Stack Development and Generative AI."
+    />
     <div className="min-h-screen">
       <Navbar />
       <section className="bg-background pt-28 pb-20 min-h-screen">

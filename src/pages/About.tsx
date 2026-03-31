@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 import profileImg from "@/assets/profile.jpg";
+import SEOHead from "@/components/SEOHead";
 
 const highlights = [
   {
@@ -37,6 +38,10 @@ const infoGrid = [
 
 const About = () => (
   <PageTransition>
+    <SEOHead
+      title="About — K. Pradeep"
+      description="Learn about K. Pradeep — a Java Full Stack Developer and AI Engineer from Hyderabad, India."
+    />
     <div className="min-h-screen">
       <Navbar />
       <section className="pt-28 pb-20 bg-background">
@@ -84,7 +89,6 @@ const About = () => (
                     width={192}
                     height={192}
                   />
-                  <div className="absolute -inset-2 rounded-full border-2 border-gold/15 animate-pulse" />
                 </div>
               </div>
 

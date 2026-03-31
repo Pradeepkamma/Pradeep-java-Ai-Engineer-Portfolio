@@ -3,6 +3,7 @@ import { Mail, Phone, MapPin, Github, Linkedin, Send } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
+import SEOHead from "@/components/SEOHead";
 
 const contactLinks = [
   { icon: <Mail size={18} />, label: "pradeep1a1225@gmail.com", href: "mailto:pradeep1a1225@gmail.com" },
@@ -13,15 +14,22 @@ const contactLinks = [
 ];
 
 const Contact = () => {
+  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const mailtoUrl = `mailto:pradeep1a1225@gmail.com?subject=${encodeURIComponent(form.subject || "Portfolio Contact")}&body=${encodeURIComponent(`Hi Pradeep,\n\n${form.message}\n\nFrom: ${form.name}\nEmail: ${form.email}`)}`;
+    window.open(mailtoUrl, "_blank");
     setSubmitted(true);
   };
 
   return (
     <PageTransition>
+      <SEOHead
+        title="Contact — K. Pradeep"
+        description="Get in touch with K. Pradeep for job opportunities, freelance projects, or collaborations."
+      />
       <div className="min-h-screen">
         <Navbar />
         <section className="bg-navy pt-28 pb-20 min-h-screen">
@@ -29,7 +37,7 @@ const Contact = () => {
             <h1 className="font-heading text-3xl md:text-4xl text-white text-center mb-3">
               Let's Work Together
             </h1>
-            <p className="text-white/40 text-center mb-12 max-w-md mx-auto">
+            <p className="text-white/40 text-center mb-12 max-w-md mx-auto text-sm">
               Have an opportunity or project in mind? I'd love to hear from you.
             </p>
 
@@ -67,6 +75,12 @@ const Contact = () => {
                   <div className="bg-gold/10 border border-gold/20 rounded-xl p-8 text-center">
                     <p className="text-gold text-lg font-heading mb-2">✓ Message Sent!</p>
                     <p className="text-white/50 text-sm">Thanks for reaching out. I'll get back to you soon.</p>
+                    <button
+                      onClick={() => { setSubmitted(false); setForm({ name: "", email: "", subject: "", message: "" }); }}
+                      className="mt-4 text-gold/70 text-xs hover:text-gold transition underline"
+                    >
+                      Send another message
+                    </button>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">
@@ -74,24 +88,32 @@ const Contact = () => {
                       type="text"
                       placeholder="Your Name"
                       required
+                      value={form.name}
+                      onChange={(e) => setForm({ ...form, name: e.target.value })}
                       className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder:text-white/30 focus:border-gold/50 focus:outline-none focus:ring-1 focus:ring-gold/20 transition"
                     />
                     <input
                       type="email"
                       placeholder="Your Email"
                       required
+                      value={form.email}
+                      onChange={(e) => setForm({ ...form, email: e.target.value })}
                       className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder:text-white/30 focus:border-gold/50 focus:outline-none focus:ring-1 focus:ring-gold/20 transition"
                     />
                     <input
                       type="text"
                       placeholder="Subject"
                       required
+                      value={form.subject}
+                      onChange={(e) => setForm({ ...form, subject: e.target.value })}
                       className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder:text-white/30 focus:border-gold/50 focus:outline-none focus:ring-1 focus:ring-gold/20 transition"
                     />
                     <textarea
                       placeholder="Your Message"
                       rows={5}
                       required
+                      value={form.message}
+                      onChange={(e) => setForm({ ...form, message: e.target.value })}
                       className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder:text-white/30 focus:border-gold/50 focus:outline-none focus:ring-1 focus:ring-gold/20 transition resize-none"
                     />
                     <button
