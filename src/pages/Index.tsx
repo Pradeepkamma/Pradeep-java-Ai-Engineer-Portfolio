@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProjectCard from "@/components/ProjectCard";
 import PageTransition from "@/components/PageTransition";
+import SEOHead from "@/components/SEOHead";
 
 const fadeUp = (delay: number) => ({
   initial: { opacity: 0, y: 24 },
@@ -25,6 +26,10 @@ const coreSkills = [
 
 const Index = () => (
   <PageTransition>
+    <SEOHead
+      title="K. Pradeep — Java Full Stack Developer & AI Engineer"
+      description="Portfolio of K. Pradeep — B.Tech IT graduate skilled in Java Full Stack Development and Generative AI. Based in Hyderabad, India."
+    />
     <div className="min-h-screen">
       <Navbar />
 
@@ -135,18 +140,21 @@ const Index = () => (
               description="Built an AI-powered luxury product rendering pipeline using custom-trained Flux LoRA model and ComfyUI workflows. Generated campaign-level product images."
               tags={["ComfyUI", "Flux LoRA", "Generative AI"]}
               link="/projects/tulipa"
+              githubUrl="https://github.com/Pradeepkamma"
             />
             <ProjectCard
               title="CT Image Segmentation — Pneumonia Detection"
               description="Developed a deep learning segmentation model achieving 95% accuracy for classifying CT lung images, assisting doctors in early medical diagnosis."
               tags={["Deep Learning", "Python", "Medical AI"]}
               link="/projects/ctscan"
+              githubUrl="https://github.com/Pradeepkamma"
             />
             <ProjectCard
               title="Tesla Stock Price Prediction"
               description="Built an LSTM neural network model for time-series stock price forecasting using historical Tesla market data with technical indicators."
               tags={["LSTM", "Python", "Data Science"]}
               link="/projects/tesla"
+              githubUrl="https://github.com/Pradeepkamma/Tesla-Stock-Price-Prediction"
             />
           </div>
 
