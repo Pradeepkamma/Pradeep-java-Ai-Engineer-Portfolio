@@ -89,11 +89,11 @@ const Index = () => (
             {...fadeUp(0.4)}
             className="hidden md:block relative"
           >
-            <div className="relative p-1 rounded-2xl bg-gradient-to-br from-gold/40 via-gold/20 to-gold/5">
+            <div className="relative p-[3px] rounded-2xl bg-gradient-to-br from-gold/60 to-gold/20 shadow-[0_0_30px_hsl(var(--gold)/0.15)]">
               <img
                 src={profileImg}
                 alt="K. Pradeep"
-                className="w-72 h-80 object-cover rounded-2xl shadow-2xl"
+                className="w-72 h-80 object-cover rounded-2xl"
                 width={288}
                 height={320}
               />
