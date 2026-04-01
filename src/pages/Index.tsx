@@ -94,15 +94,19 @@ const Index = () => (
             {...fadeUp(0.4)}
             className="hidden md:block relative"
           >
-            <div className="relative p-[3px] rounded-2xl bg-gradient-to-br from-gold/60 to-gold/20 shadow-[0_0_30px_hsl(var(--gold)/0.15)]">
-              <img
-                src={profileImg}
-                alt="K. Pradeep"
-                className="w-72 h-80 object-cover rounded-2xl"
-                width={288}
-                height={320}
-              />
+            <div className="relative p-[3px] rounded-full bg-gradient-to-br from-gold/50 via-gold/20 to-transparent shadow-[0_0_40px_hsl(var(--gold)/0.2)]">
+              <div className="rounded-full overflow-hidden ring-2 ring-gold/10 ring-offset-4 ring-offset-navy">
+                <img
+                  src={profileImg}
+                  alt="K. Pradeep"
+                  className="w-72 h-72 object-cover object-top"
+                  width={288}
+                  height={288}
+                />
+              </div>
             </div>
+            {/* Soft radial fade behind the image */}
+            <div className="absolute inset-0 -z-10 rounded-full bg-gold/5 blur-2xl scale-110" />
           </motion.div>
         </div>
       </section>
