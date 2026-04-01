@@ -105,7 +105,6 @@ const Index = () => (
                 />
               </div>
             </div>
-            {/* Soft radial fade behind the image */}
             <div className="absolute inset-0 -z-10 rounded-full bg-gold/5 blur-2xl scale-110" />
           </motion.div>
         </div>
@@ -121,7 +120,7 @@ const Index = () => (
             {coreSkills.map((s) => (
               <span
                 key={s}
-                className="px-4 py-2 bg-off-white text-navy text-sm rounded-full font-medium hover:shadow-md transition-shadow"
+                className="px-4 py-2 bg-off-white text-foreground text-sm rounded-full font-medium hover:shadow-md transition-shadow"
               >
                 {s}
               </span>
@@ -165,7 +164,7 @@ const Index = () => (
           <div className="text-center mt-10">
             <Link
               to="/projects"
-              className="px-6 py-3 border border-navy text-navy rounded-lg font-medium text-sm hover:bg-navy hover:text-white transition inline-flex items-center gap-2"
+              className="px-6 py-3 border border-foreground text-foreground rounded-lg font-medium text-sm hover:bg-foreground hover:text-background transition inline-flex items-center gap-2"
             >
               All Projects <ArrowRight size={16} />
             </Link>
