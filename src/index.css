@@ -25,11 +25,37 @@
     --ring: 37 38% 60%;
     --radius: 0.5rem;
 
-    /* Custom tokens — exact hex #0f1f3d, #c8a96e, #f8f6f2 */
     --navy: 218 61% 15%;
     --gold: 37 46% 61%;
     --off-white: 36 33% 96%;
     --gray-text: 220 9% 46%;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --card: 217 33% 17%;
+    --card-foreground: 210 40% 98%;
+    --popover: 217 33% 17%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 37 38% 60%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 22%;
+    --input: 217 33% 22%;
+    --ring: 37 46% 61%;
+
+    --navy: 222 47% 11%;
+    --gold: 37 46% 61%;
+    --off-white: 217 33% 14%;
+    --gray-text: 215 20% 65%;
   }
 }
 

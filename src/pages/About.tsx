@@ -53,13 +53,13 @@ const About = () => (
 
           <div className="grid md:grid-cols-2 gap-16 max-w-5xl mx-auto">
             <div>
-              <p className="text-gray-text leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed mb-4">
                 I'm K. Pradeep, a B.Tech graduate in Information Technology from NRI Institute of Technology, Vijayawada. I'm passionate about building things that work — from clean Java backends to intelligent AI-powered systems.
               </p>
-              <p className="text-gray-text leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed mb-4">
                 My journey started with core Java and web technologies, and over time I've expanded into Machine Learning and now Generative AI. I'm currently part of an AI Cohort focused on Generative AI & LLM Engineering, where I'm working with tools like ComfyUI, Flux, LoRA Training, RAG systems, and FastAPI.
               </p>
-              <p className="text-gray-text leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed mb-4">
                 I believe in learning by doing. Every project I take on pushes me to understand technology deeper and apply it to real-world problems.
               </p>
               <p className="text-foreground font-medium mb-8">
@@ -68,9 +68,9 @@ const About = () => (
 
               <div className="grid grid-cols-2 gap-4">
                 {infoGrid.map((item) => (
-                  <div key={item.label} className="p-3 rounded-lg bg-off-white">
+                  <div key={item.label} className="p-3 rounded-lg bg-card border border-border">
                     <p className="text-xs text-gold uppercase tracking-wider font-semibold mb-1">{item.label}</p>
-                    <p className={`text-sm font-medium ${item.isGreen ? "text-green-600" : "text-foreground"}`}>
+                    <p className={`text-sm font-medium ${item.isGreen ? "text-green-600 dark:text-green-400" : "text-foreground"}`}>
                       {item.value}
                     </p>
                   </div>
@@ -98,7 +98,7 @@ const About = () => (
                     <h3 className="font-heading text-foreground text-base mb-1">
                       {h.icon} {h.title}
                     </h3>
-                    <p className="text-gray-text text-sm leading-relaxed">{h.text}</p>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{h.text}</p>
                   </div>
                 ))}
               </div>

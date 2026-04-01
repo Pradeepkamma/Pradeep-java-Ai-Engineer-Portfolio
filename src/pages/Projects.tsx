@@ -17,7 +17,7 @@ const Projects = () => (
           <h1 className="font-heading text-3xl md:text-4xl text-foreground text-center mb-4">
             Projects
           </h1>
-          <p className="text-gray-text text-center mb-12 max-w-xl mx-auto">
+          <p className="text-muted-foreground text-center mb-12 max-w-xl mx-auto">
             Real-world projects I've designed and built end-to-end — from AI systems to full-stack applications.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
