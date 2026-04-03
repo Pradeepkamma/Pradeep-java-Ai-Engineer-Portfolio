@@ -32,19 +32,26 @@ const Contact = () => {
       />
       <div className="min-h-screen">
         <Navbar />
-        <section className="bg-navy pt-28 pb-20 min-h-screen">
-          <div className="container mx-auto px-4">
-            <h1 className="font-heading text-3xl md:text-4xl text-white text-center mb-3">
+
+        {/* Hero banner */}
+        <section className="bg-navy pt-28 pb-12">
+          <div className="container mx-auto px-4 text-center">
+            <h1 className="font-heading text-3xl md:text-4xl text-primary-foreground dark:text-foreground mb-3">
               Let's Work Together
             </h1>
-            <p className="text-white/40 text-center mb-12 max-w-md mx-auto text-sm">
+            <p className="text-primary-foreground/40 dark:text-foreground/40 text-sm max-w-md mx-auto">
               Have an opportunity or project in mind? I'd love to hear from you.
             </p>
+          </div>
+        </section>
 
+        {/* Contact content */}
+        <section className="bg-background py-16">
+          <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-16 max-w-4xl mx-auto">
               <div>
                 <h2 className="font-heading text-gold text-xl mb-6">Get in Touch</h2>
-                <p className="text-white/50 leading-relaxed mb-8 text-sm">
+                <p className="text-muted-foreground leading-relaxed mb-8 text-sm">
                   I'm currently open to full-time opportunities, freelance projects, and collaborations. If you have something interesting in mind, feel free to reach out!
                 </p>
                 <div className="space-y-4">
@@ -58,12 +65,12 @@ const Contact = () => {
                           href={c.href}
                           target={c.href.startsWith("http") ? "_blank" : undefined}
                           rel="noopener noreferrer"
-                          className="text-white/70 text-sm hover:text-gold transition"
+                          className="text-muted-foreground text-sm hover:text-gold transition"
                         >
                           {c.label}
                         </a>
                       ) : (
-                        <span className="text-white/70 text-sm">{c.label}</span>
+                        <span className="text-muted-foreground text-sm">{c.label}</span>
                       )}
                     </div>
                   ))}
@@ -74,7 +81,7 @@ const Contact = () => {
                 {submitted ? (
                   <div className="bg-gold/10 border border-gold/20 rounded-xl p-8 text-center">
                     <p className="text-gold text-lg font-heading mb-2">✓ Message Sent!</p>
-                    <p className="text-white/50 text-sm">Thanks for reaching out. I'll get back to you soon.</p>
+                    <p className="text-muted-foreground text-sm">Thanks for reaching out. I'll get back to you soon.</p>
                     <button
                       onClick={() => { setSubmitted(false); setForm({ name: "", email: "", subject: "", message: "" }); }}
                       className="mt-4 text-gold/70 text-xs hover:text-gold transition underline"
@@ -90,7 +97,7 @@ const Contact = () => {
                       required
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder:text-white/30 focus:border-gold/50 focus:outline-none focus:ring-1 focus:ring-gold/20 transition"
+                      className="w-full bg-card border border-border rounded-lg px-4 py-3 text-foreground text-sm placeholder:text-muted-foreground focus:border-gold/50 focus:outline-none focus:ring-1 focus:ring-gold/20 transition"
                     />
                     <input
                       type="email"
@@ -98,7 +105,7 @@ const Contact = () => {
                       required
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder:text-white/30 focus:border-gold/50 focus:outline-none focus:ring-1 focus:ring-gold/20 transition"
+                      className="w-full bg-card border border-border rounded-lg px-4 py-3 text-foreground text-sm placeholder:text-muted-foreground focus:border-gold/50 focus:outline-none focus:ring-1 focus:ring-gold/20 transition"
                     />
                     <input
                       type="text"
@@ -106,7 +113,7 @@ const Contact = () => {
                       required
                       value={form.subject}
                       onChange={(e) => setForm({ ...form, subject: e.target.value })}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder:text-white/30 focus:border-gold/50 focus:outline-none focus:ring-1 focus:ring-gold/20 transition"
+                      className="w-full bg-card border border-border rounded-lg px-4 py-3 text-foreground text-sm placeholder:text-muted-foreground focus:border-gold/50 focus:outline-none focus:ring-1 focus:ring-gold/20 transition"
                     />
                     <textarea
                       placeholder="Your Message"
@@ -114,7 +121,7 @@ const Contact = () => {
                       required
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder:text-white/30 focus:border-gold/50 focus:outline-none focus:ring-1 focus:ring-gold/20 transition resize-none"
+                      className="w-full bg-card border border-border rounded-lg px-4 py-3 text-foreground text-sm placeholder:text-muted-foreground focus:border-gold/50 focus:outline-none focus:ring-1 focus:ring-gold/20 transition resize-none"
                     />
                     <button
                       type="submit"
@@ -128,6 +135,7 @@ const Contact = () => {
             </div>
           </div>
         </section>
+
         <Footer />
       </div>
     </PageTransition>

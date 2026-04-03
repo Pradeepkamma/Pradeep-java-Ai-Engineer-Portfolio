@@ -25,10 +25,10 @@ const Skills = () => (
       {/* Hero banner */}
       <section className="bg-navy pt-28 pb-12">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="font-heading text-3xl md:text-4xl text-white mb-3">
+          <h1 className="font-heading text-3xl md:text-4xl text-primary-foreground dark:text-foreground mb-3">
             What I Work With
           </h1>
-          <p className="text-white/40 text-sm max-w-md mx-auto">
+          <p className="text-primary-foreground/40 dark:text-foreground/40 text-sm max-w-md mx-auto">
             Technologies, tools, and frameworks I use to build impactful projects.
           </p>
           <div className="w-16 h-0.5 bg-gold mx-auto mt-4" />
@@ -36,7 +36,7 @@ const Skills = () => (
       </section>
 
       {/* Skills grid */}
-      <section className="bg-navy pb-20">
+      <section className="bg-background pb-20 pt-12">
         <div className="container mx-auto px-4">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {skillCategories.map((cat) => (
