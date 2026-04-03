@@ -12,7 +12,7 @@ const Projects = () => (
     />
     <div className="min-h-screen">
       <Navbar />
-      <section className="bg-off-white pt-28 pb-20 min-h-screen">
+      <section className="bg-background pt-28 pb-20 min-h-screen">
         <div className="container mx-auto px-4">
           <h1 className="font-heading text-3xl md:text-4xl text-foreground text-center mb-4">
             Projects

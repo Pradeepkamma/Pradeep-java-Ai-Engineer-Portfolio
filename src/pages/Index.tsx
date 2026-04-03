@@ -46,7 +46,7 @@ const Index = () => (
 
             <motion.h1
               {...fadeUp(0.2)}
-              className="font-heading text-white text-4xl md:text-5xl lg:text-6xl mb-4 leading-tight"
+              className="font-heading text-primary-foreground dark:text-foreground text-4xl md:text-5xl lg:text-6xl mb-4 leading-tight"
             >
               Hi, I'm <span className="text-gold">Pradeep</span>
             </motion.h1>
@@ -60,7 +60,7 @@ const Index = () => (
 
             <motion.p
               {...fadeUp(0.35)}
-              className="text-white/50 text-sm leading-relaxed max-w-lg mb-8 mx-auto md:mx-0"
+              className="text-primary-foreground/50 dark:text-foreground/50 text-sm leading-relaxed max-w-lg mb-8 mx-auto md:mx-0"
             >
               I build scalable web applications and AI-powered systems.
               B.Tech graduate in Information Technology — a quick learner who adapts fast and delivers results.
@@ -77,13 +77,13 @@ const Index = () => (
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 border border-white/30 text-white rounded-lg font-medium text-sm hover:border-gold hover:text-gold transition inline-flex items-center gap-2"
+                className="px-6 py-3 border border-primary-foreground/30 dark:border-foreground/30 text-primary-foreground dark:text-foreground rounded-lg font-medium text-sm hover:border-gold hover:text-gold transition inline-flex items-center gap-2"
               >
                 <Download size={16} /> Download Resume
               </a>
               <Link
                 to="/contact"
-                className="px-6 py-3 border border-white/20 text-white/70 rounded-lg font-medium text-sm hover:border-gold hover:text-gold transition"
+                className="px-6 py-3 border border-primary-foreground/20 dark:border-foreground/20 text-primary-foreground/70 dark:text-foreground/70 rounded-lg font-medium text-sm hover:border-gold hover:text-gold transition"
               >
                 Contact Me
               </Link>
@@ -130,7 +130,7 @@ const Index = () => (
       </section>
 
       {/* Featured Projects */}
-      <section className="bg-off-white py-20">
+      <section className="bg-background py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="font-heading text-3xl text-foreground mb-3">Featured Projects</h2>
