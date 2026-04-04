@@ -14,8 +14,8 @@ const ProjectCard = ({ title, description, tags, link, githubUrl }: ProjectCardP
     to={link}
     className="group flex flex-col bg-card rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-gold/10 transition-all duration-300 hover:-translate-y-2 border border-border hover:border-gold/30 h-full"
   >
-    <div className="bg-navy h-40 flex items-center justify-center px-6 shrink-0">
-      <h3 className="font-heading text-gold text-lg text-center leading-snug">{title}</h3>
+    <div className="bg-navy h-40 flex items-center justify-center px-6 shrink-0 overflow-hidden">
+      <h3 className="font-heading text-gold text-lg text-center leading-snug group-hover:scale-105 transition-transform duration-300">{title}</h3>
     </div>
 
     <div className="p-6 flex flex-col flex-1">
