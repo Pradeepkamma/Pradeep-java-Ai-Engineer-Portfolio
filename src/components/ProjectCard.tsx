@@ -12,7 +12,7 @@ interface ProjectCardProps {
 const ProjectCard = ({ title, description, tags, link, githubUrl }: ProjectCardProps) => (
   <Link
     to={link}
-    className="group flex flex-col bg-card rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 border border-border h-full"
+    className="group flex flex-col bg-card rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-gold/10 transition-all duration-300 hover:-translate-y-2 border border-border hover:border-gold/30 h-full"
   >
     <div className="bg-navy h-40 flex items-center justify-center px-6 shrink-0">
       <h3 className="font-heading text-gold text-lg text-center leading-snug">{title}</h3>
