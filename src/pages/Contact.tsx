@@ -6,7 +6,7 @@ import PageTransition from "@/components/PageTransition";
 import SEOHead from "@/components/SEOHead";
 
 const contactLinks = [
-  { icon: <Mail size={18} />, label: "pradeep1a1225@gmail.com", href: "mailto:pradeep1a1225@gmail.com" },
+  { icon: <Mail size={18} />, label: "kammapradeep2002@gmail.com", href: "mailto:kammapradeep2002@gmail.com" },
   { icon: <Phone size={18} />, label: "+91 8247402546", href: "tel:+918247402546" },
   { icon: <Linkedin size={18} />, label: "linkedin.com/in/kammapradeep", href: "https://www.linkedin.com/in/kammapradeep" },
   { icon: <Github size={18} />, label: "github.com/Pradeepkamma", href: "https://github.com/Pradeepkamma" },
@@ -19,7 +19,7 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const mailtoUrl = `mailto:pradeep1a1225@gmail.com?subject=${encodeURIComponent(form.subject || "Portfolio Contact")}&body=${encodeURIComponent(`Hi Pradeep,\n\n${form.message}\n\nFrom: ${form.name}\nEmail: ${form.email}`)}`;
+    const mailtoUrl = `mailto:kammapradeep2002@gmail.com?subject=${encodeURIComponent(form.subject || "Portfolio Contact")}&body=${encodeURIComponent(`Hi Pradeep,\n\n${form.message}\n\nFrom: ${form.name}\nEmail: ${form.email}`)}`;
     window.open(mailtoUrl, "_blank");
     setSubmitted(true);
   };
