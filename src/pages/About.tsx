@@ -80,15 +80,17 @@ const About = () => (
 
             <div>
               <div className="flex justify-center mb-8">
-                <div className="relative">
-                  <img
-                    src={profileImg}
-                    alt="K. Pradeep"
-                    className="w-48 h-48 rounded-full object-cover border-4 border-gold/30 shadow-xl"
-                    loading="lazy"
-                    width={192}
-                    height={192}
-                  />
+                <div className="relative p-[3px] rounded-full bg-gradient-to-br from-gold/50 via-gold/20 to-transparent shadow-[0_0_30px_hsl(var(--gold)/0.15)]">
+                  <div className="rounded-full overflow-hidden ring-2 ring-gold/10 ring-offset-4 ring-offset-background">
+                    <img
+                      src={profileImg}
+                      alt="K. Pradeep"
+                      className="w-48 h-48 object-cover object-[center_15%]"
+                      loading="lazy"
+                      width={192}
+                      height={192}
+                    />
+                  </div>
                 </div>
               </div>
 
