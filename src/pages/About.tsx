@@ -30,7 +30,7 @@ const highlights = [
 const infoGrid = [
   { label: "Name", value: "K. Pradeep" },
   { label: "Location", value: "Hyderabad, India" },
-  { label: "Email", value: "pradeep1a1225@gmail.com" },
+  { label: "Email", value: "kammapradeep2002@gmail.com" },
   { label: "Degree", value: "B.Tech — IT (CGPA 8.1)" },
   { label: "Phone", value: "+91 8247402546" },
   { label: "Status", value: "Open to Work ✅", isGreen: true },
