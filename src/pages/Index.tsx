@@ -99,7 +99,7 @@ const Index = () => (
                 <img
                   src={profileImg}
                   alt="K. Pradeep"
-                  className="w-72 h-72 object-cover object-top"
+                  className="w-72 h-72 object-cover object-[center_15%]"
                   width={288}
                   height={288}
                 />
