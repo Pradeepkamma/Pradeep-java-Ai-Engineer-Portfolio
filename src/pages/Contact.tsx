@@ -18,12 +18,27 @@ const contactLinks = [
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const mailtoUrl = `mailto:kammapradeep2002@gmail.com?subject=${encodeURIComponent(form.subject || "Portfolio Contact")}&body=${encodeURIComponent(`Hi Pradeep,\n\n${form.message}\n\nFrom: ${form.name}\nEmail: ${form.email}`)}`;
-    window.open(mailtoUrl, "_blank");
-    setSubmitted(true);
+    setLoading(true);
+    try {
+      const { error } = await supabase.from("contact_messages").insert({
+        name: form.name.trim(),
+        email: form.email.trim(),
+        subject: form.subject.trim(),
+        message: form.message.trim(),
+      });
+      if (error) throw error;
+      setSubmitted(true);
+      toast({ title: "Message sent!", description: "I'll get back to you soon." });
+    } catch (err) {
+      toast({ title: "Failed to send", description: "Please try again or email me directly.", variant: "destructive" });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
