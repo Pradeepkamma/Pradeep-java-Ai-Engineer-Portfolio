@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Github, Linkedin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Send, Loader2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 import SEOHead from "@/components/SEOHead";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 const contactLinks = [
   { icon: <Mail size={18} />, label: "kammapradeep2002@gmail.com", href: "mailto:kammapradeep2002@gmail.com" },
