@@ -142,9 +142,11 @@ const Contact = () => {
                     />
                     <button
                       type="submit"
-                      className="w-full bg-gold text-navy font-semibold py-3 rounded-lg text-sm hover:opacity-90 transition inline-flex items-center justify-center gap-2"
+                      disabled={loading}
+                      className="w-full bg-gold text-navy font-semibold py-3 rounded-lg text-sm hover:opacity-90 transition inline-flex items-center justify-center gap-2 disabled:opacity-50"
                     >
-                      <Send size={16} /> Send Message
+                      {loading ? <Loader2 size={16} className="animate-spin" /> : <Send size={16} />}
+                      {loading ? "Sending..." : "Send Message"}
                     </button>
                   </form>
                 )}
