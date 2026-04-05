@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Github, Linkedin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Send, Loader2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 import SEOHead from "@/components/SEOHead";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 const contactLinks = [
   { icon: <Mail size={18} />, label: "kammapradeep2002@gmail.com", href: "mailto:kammapradeep2002@gmail.com" },
@@ -16,12 +18,27 @@ const contactLinks = [
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const mailtoUrl = `mailto:kammapradeep2002@gmail.com?subject=${encodeURIComponent(form.subject || "Portfolio Contact")}&body=${encodeURIComponent(`Hi Pradeep,\n\n${form.message}\n\nFrom: ${form.name}\nEmail: ${form.email}`)}`;
-    window.open(mailtoUrl, "_blank");
-    setSubmitted(true);
+    setLoading(true);
+    try {
+      const { error } = await supabase.from("contact_messages").insert({
+        name: form.name.trim(),
+        email: form.email.trim(),
+        subject: form.subject.trim(),
+        message: form.message.trim(),
+      });
+      if (error) throw error;
+      setSubmitted(true);
+      toast({ title: "Message sent!", description: "I'll get back to you soon." });
+    } catch (err) {
+      toast({ title: "Failed to send", description: "Please try again or email me directly.", variant: "destructive" });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -125,9 +142,11 @@ const Contact = () => {
                     />
                     <button
                       type="submit"
-                      className="w-full bg-gold text-navy font-semibold py-3 rounded-lg text-sm hover:opacity-90 transition inline-flex items-center justify-center gap-2"
+                      disabled={loading}
+                      className="w-full bg-gold text-navy font-semibold py-3 rounded-lg text-sm hover:opacity-90 transition inline-flex items-center justify-center gap-2 disabled:opacity-50"
                     >
-                      <Send size={16} /> Send Message
+                      {loading ? <Loader2 size={16} className="animate-spin" /> : <Send size={16} />}
+                      {loading ? "Sending..." : "Send Message"}
                     </button>
                   </form>
                 )}
