@@ -16,6 +16,8 @@ import ProjectTesla from "./pages/ProjectTesla";
 import ProjectPortfolio from "./pages/ProjectPortfolio";
 import Certifications from "./pages/Certifications";
 import Contact from "./pages/Contact";
+import AdminLogin from "./pages/AdminLogin";
+import AdminMessages from "./pages/AdminMessages";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -35,6 +37,8 @@ const AnimatedRoutes = () => {
         <Route path="/projects/portfolio" element={<ProjectPortfolio />} />
         <Route path="/certifications" element={<Certifications />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/admin" element={<AdminLogin />} />
+        <Route path="/admin/messages" element={<AdminMessages />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>
