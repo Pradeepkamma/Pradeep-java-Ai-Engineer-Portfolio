@@ -9,18 +9,26 @@ const AdminLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const [isSignup, setIsSignup] = useState(false);
   const navigate = useNavigate();
   const { toast } = useToast();
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const { error } = await supabase.auth.signInWithPassword({ email, password });
-      if (error) throw error;
-      navigate("/admin/messages");
+      if (isSignup) {
+        const { error } = await supabase.auth.signUp({ email, password });
+        if (error) throw error;
+        toast({ title: "Account created!", description: "You're now logged in." });
+        navigate("/admin/messages");
+      } else {
+        const { error } = await supabase.auth.signInWithPassword({ email, password });
+        if (error) throw error;
+        navigate("/admin/messages");
+      }
     } catch (err: any) {
-      toast({ title: "Login failed", description: err.message, variant: "destructive" });
+      toast({ title: "Error", description: err.message, variant: "destructive" });
     } finally {
       setLoading(false);
     }
@@ -31,8 +39,10 @@ const AdminLogin = () => {
       <SEOHead title="Admin Login" description="Admin access" />
       <div className="min-h-screen bg-background flex items-center justify-center px-4">
         <div className="w-full max-w-sm">
-          <h1 className="font-heading text-2xl text-foreground text-center mb-8">Admin Login</h1>
-          <form onSubmit={handleLogin} className="space-y-4">
+          <h1 className="font-heading text-2xl text-foreground text-center mb-8">
+            {isSignup ? "Create Admin Account" : "Admin Login"}
+          </h1>
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div className="relative">
               <Mail size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
               <input
@@ -50,6 +60,7 @@ const AdminLogin = () => {
                 type="password"
                 placeholder="Password"
                 required
+                minLength={6}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="w-full bg-card border border-border rounded-lg pl-10 pr-4 py-3 text-foreground text-sm placeholder:text-muted-foreground focus:border-accent/50 focus:outline-none focus:ring-1 focus:ring-accent/20 transition"
@@ -61,9 +72,15 @@ const AdminLogin = () => {
               className="w-full bg-accent text-primary-foreground font-semibold py-3 rounded-lg text-sm hover:opacity-90 transition inline-flex items-center justify-center gap-2 disabled:opacity-50"
             >
               {loading ? <Loader2 size={16} className="animate-spin" /> : null}
-              {loading ? "Signing in..." : "Sign In"}
+              {loading ? (isSignup ? "Creating..." : "Signing in...") : (isSignup ? "Create Account" : "Sign In")}
             </button>
           </form>
+          <button
+            onClick={() => setIsSignup(!isSignup)}
+            className="mt-4 w-full text-center text-xs text-muted-foreground hover:text-accent transition"
+          >
+            {isSignup ? "Already have an account? Sign in" : "First time? Create account"}
+          </button>
         </div>
       </div>
     </>
