@@ -16,6 +16,8 @@ import ProjectTesla from "./pages/ProjectTesla";
 import ProjectPortfolio from "./pages/ProjectPortfolio";
 import Certifications from "./pages/Certifications";
 import Contact from "./pages/Contact";
+import AdminLogin from "./pages/AdminLogin";
+import AdminMessages from "./pages/AdminMessages";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
