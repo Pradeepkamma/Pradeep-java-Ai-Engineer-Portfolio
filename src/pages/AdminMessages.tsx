@@ -64,6 +64,12 @@ const AdminMessages = () => {
     }
   };
 
+  const replyToMessage = (msg: ContactMessage) => {
+    const subject = encodeURIComponent(`Re: ${msg.subject}`);
+    const body = encodeURIComponent(`\n\n---\nOn ${new Date(msg.created_at).toLocaleDateString()}, ${msg.name} wrote:\n${msg.message}`);
+    window.open(`mailto:${msg.email}?subject=${subject}&body=${body}`, "_self");
+  };
+
   const handleLogout = async () => {
     await supabase.auth.signOut();
     navigate("/admin", { replace: true });
