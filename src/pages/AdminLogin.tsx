@@ -9,7 +9,7 @@ const AdminLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const [isSignup, setIsSignup] = useState(false);
+  const isSignup = false; // Signup disabled - account already created
   const navigate = useNavigate();
   const { toast } = useToast();
 
@@ -75,12 +75,6 @@ const AdminLogin = () => {
               {loading ? (isSignup ? "Creating..." : "Signing in...") : (isSignup ? "Create Account" : "Sign In")}
             </button>
           </form>
-          <button
-            onClick={() => setIsSignup(!isSignup)}
-            className="mt-4 w-full text-center text-xs text-muted-foreground hover:text-accent transition"
-          >
-            {isSignup ? "Already have an account? Sign in" : "First time? Create account"}
-          </button>
         </div>
       </div>
     </>
