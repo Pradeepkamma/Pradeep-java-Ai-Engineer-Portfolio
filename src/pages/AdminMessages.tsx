@@ -163,6 +163,13 @@ const AdminMessages = () => {
                     <div className="flex items-center gap-2">
                       <span className="text-muted-foreground text-xs">{formatDate(msg.created_at)}</span>
                       <button
+                        onClick={() => replyToMessage(msg)}
+                        className="p-1.5 text-muted-foreground hover:text-accent transition rounded-lg hover:bg-accent/10"
+                        title="Reply via email"
+                      >
+                        <Reply size={14} />
+                      </button>
+                      <button
                         onClick={() => deleteMessage(msg.id)}
                         className="p-1.5 text-muted-foreground hover:text-destructive transition rounded-lg hover:bg-destructive/10"
                         title="Delete message"
