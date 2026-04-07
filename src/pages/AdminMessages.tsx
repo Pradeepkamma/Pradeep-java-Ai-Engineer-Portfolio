@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
-import { LogOut, Mail, RefreshCw, Loader2, Trash2, CheckCircle, Circle } from "lucide-react";
+import { LogOut, Mail, RefreshCw, Loader2, Trash2, CheckCircle, Circle, Reply } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import SEOHead from "@/components/SEOHead";
 
@@ -62,6 +62,12 @@ const AdminMessages = () => {
     } else {
       toast({ title: "Deleted", description: "Message removed" });
     }
+  };
+
+  const replyToMessage = (msg: ContactMessage) => {
+    const subject = encodeURIComponent(`Re: ${msg.subject}`);
+    const body = encodeURIComponent(`\n\n---\nOn ${new Date(msg.created_at).toLocaleDateString()}, ${msg.name} wrote:\n${msg.message}`);
+    window.open(`mailto:${msg.email}?subject=${subject}&body=${body}`, "_self");
   };
 
   const handleLogout = async () => {
@@ -156,6 +162,13 @@ const AdminMessages = () => {
                     </div>
                     <div className="flex items-center gap-2">
                       <span className="text-muted-foreground text-xs">{formatDate(msg.created_at)}</span>
+                      <button
+                        onClick={() => replyToMessage(msg)}
+                        className="p-1.5 text-muted-foreground hover:text-accent transition rounded-lg hover:bg-accent/10"
+                        title="Reply via email"
+                      >
+                        <Reply size={14} />
+                      </button>
                       <button
                         onClick={() => deleteMessage(msg.id)}
                         className="p-1.5 text-muted-foreground hover:text-destructive transition rounded-lg hover:bg-destructive/10"
