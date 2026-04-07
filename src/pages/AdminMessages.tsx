@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
-import { LogOut, Mail, RefreshCw, Loader2, Trash2, CheckCircle, Circle } from "lucide-react";
+import { LogOut, Mail, RefreshCw, Loader2, Trash2, CheckCircle, Circle, Reply } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import SEOHead from "@/components/SEOHead";
 
